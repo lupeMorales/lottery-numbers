@@ -48,8 +48,13 @@ h1 {
   color: var(--veryDarkCyan);
 }
 
+/**** form ****/
 .form-container {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   bottom: 0;
   width: 100%;
   height: 80vh;
@@ -58,6 +63,44 @@ h1 {
   background-color: var(--veryDarkCyan);
 }
 
+form {
+  width: 100%;
+  padding: 40px 20px;
+  max-width: 300px;
+  border-radius: 5px;
+  background-color: var(--veryLightGrayishCyan);
+  box-shadow: 0px 0px 10px 0px var(--darkGrayishCyan);
+}
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+.input-group:nth-last-of-type() {
+  margin-bottom: 0;
+}
+.input {
+  width: 100%;
+  padding: 12px;
+  max-width: 300px;
+  outline: none;
+  border: 1px solid var(--detailsColor);
+  background-color: var(--veryLightGrayishCyan);
+}
+.placeholder {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  padding: 0 5px;
+  color: var(--veryDarkCyan);
+  font-size: var(--sm);
+  transform: 0.3s;
+  pointer-events: none;
+}
+.input:focus + .placeholder {
+  top: -10px;
+
+  background-color: var(--veryLightGrayishCyan);
+}
 .button-plus {
   position: absolute;
   right: 2%;
