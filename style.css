@@ -1,0 +1,74 @@
+:root {
+  --primaryColor: hsl(172, 67%, 45%);
+  --veryDarkCyan: hsl(183, 100%, 15%);
+  --darkGrayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan: hsl(184, 14%, 56%);
+  --lightGrayishCyan: hsl(185, 41%, 84%);
+  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --detailsColor: #e57c23;
+  --xs: 1.2rem;
+  --sm: 1.4rem;
+  --md: 1.8rem;
+  --lg: 2rem;
+  --xl: 2.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: var(--veryLightGrayishCyan);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/**** aux class ****/
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  font-size: var(--xl);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--veryDarkCyan);
+}
+
+.form-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80vh;
+  padding: 40px;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--veryDarkCyan);
+}
+
+.button-plus {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  color: var(--veryLightGrayishCyan);
+  background-color: var(--detailsColor);
+  font-size: var(--xl);
+  box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.33);
+  z-index: 1;
+}
