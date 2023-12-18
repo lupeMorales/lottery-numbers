@@ -1,6 +1,7 @@
 "use strict";
 
-const buttonPlus = document.querySelector(".js-button");
+const buttonPlus = document.querySelector(".js-buttonPlus");
+const buttonAdd = document.querySelector(".js-buttonAdd");
 const formContainer = document.querySelector(".js-formContainer");
 
 function handleClickPlus(ev) {
@@ -13,4 +14,10 @@ function handleClickPlus(ev) {
   formContainer.classList.toggle("hidden");
 }
 
+function handleClickAdd(ev) {
+  ev.preventDefault();
+  console.log("NO MISIELA");
+}
+
 buttonPlus.addEventListener("click", handleClickPlus);
+buttonAdd.addEventListener("click", handleClickAdd);
