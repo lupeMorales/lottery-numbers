@@ -68,22 +68,32 @@
       </div>
     </main>
     <section class="form-container js-formContainer hidden">
-      <form action="#" id="addLottery">
+      <form action="#" name="data" id="addLottery">
         <div class="input-group">
-          <input type="text" class="input" />
-          <label for="" class="placeholder">Número</label>
+          <input
+            type="text"
+            id="number"
+            name="number"
+            class="input js-number"
+          />
+          <label for="number" class="placeholder">Número</label>
         </div>
         <div class="input-group">
-          <input type="text" class="input" />
-          <label for="" class="placeholder">Nombre de tu décimo</label>
+          <input type="text" id="name" name="name" class="input js-name" />
+          <label for="name" class="placeholder">Nombre de tu décimo</label>
         </div>
         <div class="input-group">
-          <input type="text" class="input" />
-          <label for="" class="placeholder">Cantidad apostada</label>
+          <input type="text" id="price" name="price" class="input js-price" />
+          <label for="price" class="placeholder">Cantidad apostada</label>
         </div>
         <div class="input-group">
-          <input type="text" class="input" />
-          <label for="" class="placeholder">Participantes</label>
+          <input
+            type="text"
+            id="members"
+            name="members"
+            class="input js-members"
+          />
+          <label for="members" class="placeholder">Participantes</label>
         </div>
         <div class="input-group">
           <button class="js-buttonAdd button shadow">Añadir número</button>

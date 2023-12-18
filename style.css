@@ -160,10 +160,12 @@ form {
   transform: 0.3s;
   pointer-events: none;
 }
-.input:focus + .placeholder {
+.input:focus ~ .placeholder,
+.input:not(:focus):valid ~ .placeholder {
   top: -10px;
   background-color: var(--veryLightGrayishCyan);
 }
+
 .button {
   width: 100%;
   max-width: 300px;
