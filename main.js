@@ -11,21 +11,22 @@ const numberForm = document.querySelector(".js-number");
 const priceForm = document.querySelector(".js-price");
 const membersForm = document.querySelector(".js-members");
 
-/* console.log(document.forms.data.name.value);
-  console.log(document.forms.data.number.value);
-  console.log(document.forms.data.price.value);
-  console.log(document.forms.data.members.value);
- */
-
-const dataForm = document.forms.data;
-
 const lotteryData = [];
 const lotteryDataObj = {
   name: "",
   number: "",
   price: "",
-  /*   members: [], */
+  members: [],
 };
+
+/**** pruebita *****/
+const animal = [];
+console.log(animal);
+animal.push("perro");
+console.log(animal);
+animal.push("gato");
+console.log(animal);
+
 function fillObj() {
   lotteryDataObj.name = nameForm.value;
   lotteryDataObj.number = numberForm.value;
@@ -33,8 +34,8 @@ function fillObj() {
   lotteryDataObj.members = membersForm.value;
 }
 
-function fillData() {
-  lotteryData.push(lotteryDataObj);
+function fillData(data) {
+  lotteryData.push(data);
 }
 
 function resetForm() {
@@ -43,13 +44,14 @@ function resetForm() {
   priceForm.value = "";
   membersForm.value = "";
 }
+
 function renderLotterycard() {
   let html = "";
 
   lotteryData.forEach((item) => {
     html += `
     <article class="card-container">
-    <div>
+    <div info>
     <p class="lottery-price">${item.price}€</p>
     <p class="lottery-number">${item.number}</p>
     <p class="lottery-name">${item.name}</p>
@@ -63,6 +65,7 @@ function renderLotterycard() {
 
   lotteryCard.innerHTML = html;
 }
+
 function handleClickPlus(ev) {
   ev.preventDefault();
   if (buttonPlus.innerHTML === "+") {
@@ -78,7 +81,9 @@ function handleClickAdd(ev) {
 
   fillObj();
   console.log(lotteryDataObj);
-  fillData(lotteryData);
+
+  fillData(lotteryDataObj);
+
   console.log(lotteryData);
   renderLotterycard();
   resetForm();
@@ -86,3 +91,11 @@ function handleClickAdd(ev) {
 
 buttonPlus.addEventListener("click", handleClickPlus);
 buttonAdd.addEventListener("click", handleClickAdd);
+
+/* console.log(document.forms.data.name.value);
+  console.log(document.forms.data.number.value);
+  console.log(document.forms.data.price.value);
+  console.log(document.forms.data.members.value);
+ */
+
+/* const dataForm = document.forms.data; */

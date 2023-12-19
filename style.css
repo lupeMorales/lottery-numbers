@@ -58,6 +58,7 @@ h1 {
   font-weight: 600;
   text-transform: uppercase;
   color: var(--cream);
+  font-size: clamp(1.25rem, 0.6793rem + 3.0435vw, 3.4375rem);
 }
 /**** card lottery ****/
 .main-container {
@@ -107,13 +108,14 @@ h1 {
 }
 
 .lottery-name {
+  padding-bottom: 20px;
   font-size: var(--md);
   font-weight: 700;
   color: var(--almostWhite);
 }
 .members-container {
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 0;
   background-color: var(--accentColor2);
 }
 #members-text {
