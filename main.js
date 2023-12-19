@@ -3,25 +3,38 @@
 const buttonPlus = document.querySelector(".js-buttonPlus");
 const buttonAdd = document.querySelector(".js-buttonAdd");
 const formContainer = document.querySelector(".js-formContainer");
+const lotteryForm = document.querySelector(".js-lotteryForm");
+
+const lotteryCard = document.querySelector(".js-lotteryCard");
 const nameForm = document.querySelector(".js-name");
 const numberForm = document.querySelector(".js-number");
 const priceForm = document.querySelector(".js-price");
 const membersForm = document.querySelector(".js-members");
 
+/* console.log(document.forms.data.name.value);
+  console.log(document.forms.data.number.value);
+  console.log(document.forms.data.price.value);
+  console.log(document.forms.data.members.value);
+ */
+
 const dataForm = document.forms.data;
 
-const loterryData = [];
-const loterryDataObj = {
+const lotteryData = [];
+const lotteryDataObj = {
   name: "",
   number: "",
   price: "",
-  members: [],
+  /*   members: [], */
 };
 function fillObj() {
-  loterryDataObj.name = nameForm.value;
-  loterryDataObj.number = numberForm.value;
-  loterryDataObj.price = priceForm.value;
-  loterryDataObj.members = membersForm.value;
+  lotteryDataObj.name = nameForm.value;
+  lotteryDataObj.number = numberForm.value;
+  lotteryDataObj.price = priceForm.value;
+  lotteryDataObj.members = membersForm.value;
+}
+
+function fillData() {
+  lotteryData.push(lotteryDataObj);
 }
 
 function resetForm() {
@@ -30,7 +43,28 @@ function resetForm() {
   priceForm.value = "";
   membersForm.value = "";
 }
+function renderLotterycard() {
+  let html = "";
 
+  lotteryData.forEach((item) => {
+    html += `
+    <article class="card-container shadow ">
+    <div>
+    <p class="lottery-price shadow">${item.price}€</p>
+    <p class="lottery-number">${item.number}</p>
+    <p class="lottery-name">${item.name}</p>
+    </div>
+
+    <details>
+      <summary>Participantes</summary>
+      <p>${item.members}</p>
+      <p>PrimoNacho</p>
+    </details>
+  </article>`;
+  });
+
+  lotteryCard.innerHTML = html;
+}
 function handleClickPlus(ev) {
   ev.preventDefault();
   if (buttonPlus.innerHTML === "+") {
@@ -43,9 +77,12 @@ function handleClickPlus(ev) {
 
 function handleClickAdd(ev) {
   ev.preventDefault();
-  const clickedElement = ev.target;
+
   fillObj();
-  console.log(loterryDataObj);
+  console.log(lotteryDataObj);
+  fillData(lotteryData);
+  console.log(lotteryData);
+  renderLotterycard();
   resetForm();
 }
 
