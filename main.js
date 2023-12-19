@@ -48,18 +48,16 @@ function renderLotterycard() {
 
   lotteryData.forEach((item) => {
     html += `
-    <article class="card-container shadow ">
+    <article class="card-container">
     <div>
-    <p class="lottery-price shadow">${item.price}€</p>
+    <p class="lottery-price">${item.price}€</p>
     <p class="lottery-number">${item.number}</p>
     <p class="lottery-name">${item.name}</p>
     </div>
+<div class="members-container">
+    <p id="members-text">${item.members}</p></div>
+ 
 
-    <details>
-      <summary>Participantes</summary>
-      <p>${item.members}</p>
-      <p>PrimoNacho</p>
-    </details>
   </article>`;
   });
 

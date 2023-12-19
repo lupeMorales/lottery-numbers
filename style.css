@@ -1,12 +1,13 @@
 :root {
-  --primaryColor: hsl(172, 67%, 45%);
-  --veryDarkCyan: hsl(183, 100%, 15%);
-  --darkGrayishCyan: hsl(186, 14%, 43%);
-  --grayishCyan: hsl(184, 14%, 56%);
-  --lightGrayishCyan: hsl(185, 41%, 84%);
-  --veryLightGrayishCyan: hsl(189, 41%, 97%);
+  --bgLight: #abd1c6;
+  --bgDark: #078080;
+  --accentColor: #ff8e3c;
+  --accentColor2: #e16162;
+  --cream: #fff5e1;
+  --almostWhite: #f8f8f8;
   --white: hsl(0, 0%, 100%);
-  --detailsColor: #e57c23;
+  --black: #1a2e35;
+  --lightGray: #f3f3f3;
   --xs: 1.2rem;
   --sm: 1.4rem;
   --md: 1.8rem;
@@ -25,7 +26,7 @@ html {
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: var(--veryLightGrayishCyan);
+  background-color: var(--bgLight);
 }
 
 header {
@@ -56,7 +57,7 @@ h1 {
   font-size: var(--xl);
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--veryDarkCyan);
+  color: var(--cream);
 }
 /**** card lottery ****/
 .main-container {
@@ -81,9 +82,9 @@ h1 {
   flex-direction: column;
   width: 300px;
   height: auto;
-  background-color: var(--grayishCyan);
+  background-color: var(--bgDark);
   border-radius: 5px;
-  padding: 50px 20px 20px;
+  padding: 50px 0 0;
 }
 
 .lottery-price {
@@ -94,24 +95,34 @@ h1 {
   padding: 15px 10px;
   border-radius: 50px;
   font-size: var(--lg);
-  color: var(--veryDarkCyan);
-  border: 5px solid var(--darkGrayishCyan);
-  border: 5px solid var(--veryDarkCyan);
-  background-color: var(--detailsColor);
+  color: var(--black);
+
+  border: 5px solid var(--bgLight);
+  background-color: var(--cream);
 }
 .lottery-number {
   font-size: var(--xl);
   font-weight: 700;
-  color: var(--veryDarkCyan);
+  color: var(--almostWhite);
 }
 
 .lottery-name {
   font-size: var(--md);
   font-weight: 700;
-  color: var(--veryDarkCyan);
+  color: var(--almostWhite);
 }
-details {
-  cursor: pointer;
+.members-container {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: var(--accentColor2);
+}
+#members-text {
+  color: var(--almostWhite);
+  font-size: var(--md);
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
 }
 
 /**** form ****/
@@ -122,7 +133,7 @@ details {
   height: 87vh;
   padding: 40px;
   border-radius: 20px 20px 0 0;
-  background-color: var(--veryDarkCyan);
+  background-color: var(--bgDark);
   opacity: 1;
 }
 
@@ -132,7 +143,7 @@ form {
   padding: 40px 20px;
   max-width: 300px;
   border-radius: 10px;
-  background-color: var(--veryLightGrayishCyan);
+  background-color: var(--lightGray);
   box-shadow: -1px 5px 15px 6px rgba(0, 0, 0, 0.33);
 }
 .input-group {
@@ -147,15 +158,15 @@ form {
   padding: 12px;
   max-width: 300px;
   outline: none;
-  border: 1px solid var(--detailsColor);
-  background-color: var(--veryLightGrayishCyan);
+  border: 1px solid var(--accentColor);
+  background-color: var(--lightGray);
 }
 .placeholder {
   position: absolute;
   top: 10px;
   left: 8px;
   padding: 0 5px;
-  color: var(--veryDarkCyan);
+  color: var(--black);
   font-size: var(--sm);
   transform: 0.3s;
   pointer-events: none;
@@ -163,7 +174,7 @@ form {
 .input:focus ~ .placeholder,
 .input:not(:focus):valid ~ .placeholder {
   top: -10px;
-  background-color: var(--veryLightGrayishCyan);
+  background-color: var(--lightGray);
 }
 
 .button {
@@ -172,8 +183,8 @@ form {
   height: 50px;
   border-radius: 5px;
   border: none;
-  color: var(--veryLightGrayishCyan);
-  background-color: var(--detailsColor);
+  color: var(--almostWhite);
+  background-color: var(--accentColor);
   font-size: var(--xl);
 }
 
